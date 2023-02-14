@@ -1,0 +1,33 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<%@ page import="com.oreilly.servlet.MultipartRequest" %>    
+<%@ page import="com.oreilly.servlet.multipart.DefaultFileRenamePolicy" %>    
+<%@ page import="java.util.*" %>    
+
+<%
+ 
+ String uploadpath = request.getRealPath("upload");
+ int size = 10 * 1024 * 1024;//10MB바이트
+ String name="";
+ String subject = "";
+ String filename1="";
+ String filename2="";
+ String origfilename1="";
+ String origfilename2="";
+
+
+
+
+
+
+%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title></title>
+</head>
+<body>
+
+</body>
+</html>
