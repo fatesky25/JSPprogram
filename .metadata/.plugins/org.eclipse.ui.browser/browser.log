@@ -222,3 +222,6 @@
 
 2월 10, 2023 11:03:40.841 NEW SESSION
 2월 10, 2023 11:03:40.841 [libprotobuf ERROR ..\..\third_party\protobuf\src\google\protobuf\message_lite.cc:133] Can't parse message of type "safe_browsing.ClientDownloadRequest" because it is missing required fields: (cannot determine missing fields for lite message)
+
+2월 16, 2023 10:02:48.856 NEW SESSION
+2월 16, 2023 10:02:48.856 [3188:128:0216/100248.852:ERROR:interface_endpoint_client.cc(695)] Message 1 rejected by interface blink.mojom.WidgetHost
