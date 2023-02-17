@@ -13,7 +13,6 @@
     <fullyQualifiedTypeName name="java.sql.Date"/>
     <fullyQualifiedTypeName name="javax.servlet.ServletContextListener"/>
     <fullyQualifiedTypeName name="javax.servlet.annotation.WebListener"/>
-    <fullyQualifiedTypeName name="javax.servlet.RequestDispatcher"/>
     <fullyQualifiedTypeName name="java.io.PrintWriter"/>
     <fullyQualifiedTypeName name="com.jdbc.TempMemberDAO"/>
     <fullyQualifiedTypeName name="com.jdbc.TempMember"/>
@@ -49,4 +48,12 @@
     <fullyQualifiedTypeName name="org.jfree.chart.plot.PlotOrientation"/>
     <fullyQualifiedTypeName name="java.lang.Exception"/>
     <fullyQualifiedTypeName name="java.text.SimpleDateFormat"/>
+    <fullyQualifiedTypeName name="javax.servlet.http.HttpServletRequest"/>
+    <fullyQualifiedTypeName name="javax.servlet.http.HttpServletResponse"/>
+    <fullyQualifiedTypeName name="java.io.IOException"/>
+    <fullyQualifiedTypeName name="mvc.control.ActionForward"/>
+    <fullyQualifiedTypeName name="mvc.action.IndexAction"/>
+    <fullyQualifiedTypeName name="mvc.action.Action"/>
+    <fullyQualifiedTypeName name="mvc.control.ActionFactory"/>
+    <fullyQualifiedTypeName name="javax.servlet.RequestDispatcher"/>
 </qualifiedTypeNameHistroy>
