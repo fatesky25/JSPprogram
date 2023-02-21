@@ -96,7 +96,7 @@ public class BoardDAO {
 	    	if(conn != null)
 	    		try {
 	    			conn.close();
-	        }catch(SQLException ex){}
+	    		}catch(SQLException ex){}
 		}
 	}// end insertArticle
 	

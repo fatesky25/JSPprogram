@@ -58,7 +58,6 @@ initParams = {
 		@WebInitParam(name="email", value = "hong@naver.com")
 })
 
-
 public class InitParam extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 

@@ -1,10 +1,10 @@
 package com.logon;
-
 import java.sql.*;
 import javax.sql.*;
 import javax.naming.*;
+
 public class ConnUtil {
-	
+
 	private static DataSource ds;
 	
 	static {
@@ -15,8 +15,8 @@ public class ConnUtil {
 		}catch(NamingException ne) {}
 		
 	}
-
-	 public static Connection getConnection() throws SQLException {
-		 return ds.getConnection();
-	 }
+	
+	public static Connection getConnection() throws SQLException {
+		return ds.getConnection();
+	}
 }

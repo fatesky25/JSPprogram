@@ -15,9 +15,15 @@
 		<item key="WizardProjectsImportPage.STORE_CLOSE_CREATED_PROJECTS_ID" value="false"/>
 		<item key="WizardProjectsImportPage.STORE_HIDE_CONFLICTING_PROJECTS_ID" value="false"/>
 		<list key="WizardProjectsImportPage.STORE_DIRECTORIES">
+			<item value=""/>
 			<item value="C:\jsp_workspace\Test"/>
 		</list>
 		<list key="WizardProjectsImportPage.STORE_ARCHIVES">
+			<item value="C:\Users\USER\Downloads\ServletProject (1).zip"/>
+			<item value="C:\Users\USER\Downloads\이렇게.zip"/>
+			<item value="C:\Users\USER\Downloads\2월21일.zip"/>
+			<item value="C:\jsp_workspace\ServletProject.zip"/>
+			<item value="C:\Users\USER\Downloads\ServletProject (2) (1).zip"/>
 			<item value="C:\Users\USER\Downloads\ServletProject (2).zip"/>
 		</list>
 	</section>

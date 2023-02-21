@@ -1,16 +1,16 @@
 package com.jstl;
 
 public class MemberVO {
-	
+
 	private String name;
 	private String email;
 	private int age;
 	
-	public MemberVO() {  }
+	public MemberVO() {	}
 	
 	public MemberVO(String name, String email, int age) {
-		this.name= name;
-		this.email = email;
+		this.name=name;
+		this.email=email;
 		this.age = age;
 	}
 
@@ -37,5 +37,5 @@ public class MemberVO {
 	public void setAge(int age) {
 		this.age = age;
 	}
-
+	
 }

@@ -1,12 +1,11 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-    
 <%
-	Cookie cookie = new Cookie("hour", "1time");
-	cookie.setMaxAge(5);//60초 1분
-	response.addCookie(cookie);
+     Cookie cookie = new Cookie("hour", "1time");
+     cookie.setMaxAge(5);// 60초 (1분)
+     response.addCookie(cookie);
 
-%>
+%>    
 <!DOCTYPE html>
 <html>
 <head>

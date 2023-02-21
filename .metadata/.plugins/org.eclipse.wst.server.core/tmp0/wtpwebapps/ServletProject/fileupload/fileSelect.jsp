@@ -12,15 +12,15 @@
   }
 
 %>    
-
-<%
-  request.setCharacterEncoding("utf-8");
-  int filecounter = 0;
-  if(request.getParameter("addcnt")!=null){
-	  filecounter = Integer.parseInt(request.getParameter("addcnt"));
-  }
-%>
-<!DOCTYPE html>
+   
+ <%
+      request.setCharacterEncoding("utf-8");
+      int filecounter = 0;
+      if(request.getParameter("addcnt") != null) {
+    	  filecounter = Integer.parseInt(request.getParameter("addcnt"));
+      }
+ %>  
+ <!DOCTYPE html>
 <html>
 <head>
 <meta charset="UTF-8">
@@ -80,7 +80,7 @@ cellspacing="1" bordercolor="#660000" bgcolor="#FFFF99">
     <td><input type="text" name="user"
     onkeyup="inputValue(this.form.user.frmName2,0)"
     value="<%=getParam(request,"user")%>"></td>
-   
+    
     <td width="10%"><div align="right">title</div></td>
     <td><input type="text" name="title"
     onkeyup="inputValue(this.form.title.frmName2,1)"
@@ -91,7 +91,7 @@ cellspacing="1" bordercolor="#660000" bgcolor="#FFFF99">
 <tr bgcolor="#FFCC00">
     <td width="15%"><div align="right">Abstract</div></td>
     <td width="50%" colspan="3">
-       <textarea name="abstract" cols="40"
+       <textarea name="abstract" cols="40" 
        onkeyup="inputValue(this.form.abstract.frmName2,2)">
        <%=getParam(request,"abstract")%></textarea>
     </td>
@@ -115,15 +115,15 @@ cellspacing="1" bordercolor="#660000" bgcolor="#FFFF99">
 <tr bgcolor="#FFCC00">
        <td width="40%">
        
-       <input type="hidden" name="txtUser"
+       <input type="hidden" name="txtUser" 
        value="<%=getParam(request,"user")%>">
        
-       <input type="hidden" name="txtTitle"
+       <input type="hidden" name="txtTitle" 
        value="<%=getParam(request,"title")%>">
-       
-       <input type="hidden" name="txtAbstract"
+        
+        <input type="hidden" name="txtAbstract" 
        value="<%=getParam(request,"abstract")%>">
-       <% for(int i=0; i <filecounter; i++) {%>
+       <%  for(int i = 0; i < filecounter; i++) { %>
          <input type="file" size="50" name="selectFile<%=i%>"><br>
        <% } %>
        </td>
@@ -136,3 +136,7 @@ cellspacing="1" bordercolor="#660000" bgcolor="#FFFF99">
 
 </body>
 </html>
+
+
+
+

@@ -1,7 +1,6 @@
 package com.logon;
 
-
-//VO 
+// vo
 public class LogonDataBean {
 
 	private String id;

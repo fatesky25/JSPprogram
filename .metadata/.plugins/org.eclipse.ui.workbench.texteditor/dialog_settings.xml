@@ -6,14 +6,16 @@
 		<item key="wholeword" value="false"/>
 		<item key="incremental" value="false"/>
 		<item key="isRegEx" value="false"/>
-		<item key="selection" value="article"/>
+		<item key="selection" value="StudentDAO"/>
 		<list key="findhistory">
+			<item value="BoardDAO"/>
 			<item value="article"/>
 			<item value="&#x09;&#x09;&#x09;try {"/>
 			<item value="package com.test;"/>
 			<item value="package com.sample;"/>
 		</list>
 		<list key="replacehistory">
+			<item value="StudentDAO"/>
 		</list>
 	</section>
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog_dialogBounds">
