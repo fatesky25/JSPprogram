@@ -130,7 +130,17 @@ id="WebApp_ID" version="3.1">
  </servlet-mapping>
   -->
  
- 
- 
+ <servlet>
+    <servlet-name>Controller</servlet-name>
+    <servlet-class>boardtwo.controller.ControllerAction</servlet-class>
+    <init-param>
+                   <param-name>propertyConfig</param-name>
+                   <param-value>CommandPro.properties</param-value>   
+    </init-param>
+ </servlet>
+ <servlet-mapping>
+    <servlet-name>Controller</servlet-name>
+ <url-pattern>*.bdo</url-pattern> 
+ </servlet-mapping>
  
  </web-app>
