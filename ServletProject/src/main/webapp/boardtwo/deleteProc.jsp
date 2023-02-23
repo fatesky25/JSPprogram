@@ -7,6 +7,6 @@
 content="0;url=/boardtwo/list.bdo?pageNum=${pageNum }">
 </c:if>
 <c:if test="${check == 0 }">
-비밀번호가 맞지 않습니다.<br>
-<a href="javascript:history.go(-1)">[글수정 폼으로 돌아가기]</a>
+비밀번호가 맞지 않습니다.
+<a href="javascript:history.go(-1)">[글삭제 폼으로 돌아가기]</a>
 </c:if>

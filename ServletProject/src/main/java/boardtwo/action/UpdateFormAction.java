@@ -10,17 +10,23 @@ public class UpdateFormAction implements CommandAction {
 
 	@Override
 	public String requestPro(HttpServletRequest request, HttpServletResponse response) throws Throwable {
+		// TODO Auto-generated method stub
+		
 		
 		int num = Integer.parseInt(request.getParameter("num"));
-		String pageNum = request.getParameter("pageNum");
+		 String pageNum = request.getParameter("pageNum");
 		 
-	    BoardDAO dbPro = BoardDAO.getInstance();
-	    BoardVO article = dbPro.getArticle(num);
-	    request.setAttribute("pageNum", new Integer(pageNum));
-		request.setAttribute("article", article);
+		 
+		 
+			 BoardDAO dbPro = BoardDAO.getInstance();
+			 BoardVO article = dbPro.getArticle(num);
 		
-	
-		return "/boardtwo/updateForm.jsp";
+		
+			 request.setAttribute("pageNum", new Integer(pageNum)); 
+		     request.setAttribute("article", article);
+			   
+			return "/boardtwo/updateForm.jsp";
+		
 	}
 
 }

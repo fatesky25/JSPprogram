@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>    
 <%@ include file="view/color.jsp" %>
 <!DOCTYPE html>
 <html>
@@ -47,13 +47,12 @@ cellspacing="0" align="center" bgcolor="${bodyback_c}">
 <tr>
     <td width="150" bgcolor="${value_c}" align="center">제목</td>
     <td width="350">
-    <c:if test="${num == 0 }">
+          <c:if test="${num == 0 }">
           <input type="text" size="12" maxlength="12" name="subject">
           </c:if>
-    <c:if test="${num == 0 }">
-         </c:if>
-         <input type="text" size="12" maxlength="12" name="subject" value="[답변]">
-         
+          <c:if test="${num != 0 }">
+          <input type="text" size="12" maxlength="12" name="subject" value="[답변]">
+          </c:if>
     </td>
 </tr>
 
@@ -74,11 +73,11 @@ cellspacing="0" align="center" bgcolor="${bodyback_c}">
 
 
 <tr> 
-        <td align="center" colspan="2" bgcolor="${valcu_c}">
+        <td align="center" colspan="2" bgcolor="${value_c}">
             <input type="submit" value="글쓰기">
             <input type="reset" value="다시작성">
             <input type="button" value="글목록" 
-            onclick="javascript:window.location='/boardtwo/list.jsp'">
+            onclick="javascript:window.location='/boardtwo/list.bdo'">
                 
         </td>
 </tr>
@@ -86,5 +85,6 @@ cellspacing="0" align="center" bgcolor="${bodyback_c}">
 </table>
 
 </form>
+
 </body>
 </html>

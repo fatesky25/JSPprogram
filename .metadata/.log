@@ -6059,3 +6059,1480 @@ java.lang.IllegalArgumentException:
 	at org.eclipse.equinox.launcher.Main.invokeFramework(Main.java:654)
 	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:591)
 	at org.eclipse.equinox.launcher.Main.run(Main.java:1462)
+!SESSION 2023-02-22 18:05:48.558 -----------------------------------------------
+eclipse.buildId=4.20.0.I20210611-1600
+java.version=16.0.1
+java.vendor=Oracle Corporation
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=ko_KR
+Framework arguments:  -product org.eclipse.epp.package.jee.product
+Command-line arguments:  -os win32 -ws win32 -arch x86_64 -product org.eclipse.epp.package.jee.product
+
+!ENTRY org.eclipse.jface 2 0 2023-02-22 18:05:55.227
+!MESSAGE Keybinding conflicts occurred.  They may interfere with normal accelerator operation.
+!SUBENTRY 1 org.eclipse.jface 2 0 2023-02-22 18:05:55.227
+!MESSAGE A conflict occurred for CTRL+SHIFT+T:
+Binding(CTRL+SHIFT+T,
+	ParameterizedCommand(Command(org.eclipse.jdt.ui.navigate.open.type,Open Type,
+		Open a type in a Java editor,
+		Category(org.eclipse.ui.category.navigate,Navigate,null,true),
+		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@202ba60a,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.contexts.window,,,system)
+Binding(CTRL+SHIFT+T,
+	ParameterizedCommand(Command(org.eclipse.lsp4e.symbolinworkspace,Go to Symbol in Workspace,
+		,
+		Category(org.eclipse.lsp4e.category,Language Servers,null,true),
+		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@12ebcdf6,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.contexts.window,,,system)
+
+!ENTRY org.eclipse.ui.navigator 2 0 2023-02-22 18:06:02.763
+!MESSAGE Can't find Navigator Content Descriptor with id: org.eclipse.jst.servlet.ui.EnhancedJavaRendering
+
+!ENTRY org.eclipse.ui.navigator 2 0 2023-02-22 18:06:02.764
+!MESSAGE Can't find Navigator Content Descriptor with id: org.eclipse.jst.servlet.ui.EnhancedJavaRendering
+
+!ENTRY org.eclipse.egit.ui 2 0 2023-02-22 18:06:05.267
+!MESSAGE Warning: The environment variable HOME is not set. The following directory will be used to store the Git
+user global configuration and to define the default location to store repositories: 'C:\Users\USER'. If this is
+not correct please set the HOME environment variable and restart Eclipse. Otherwise Git for Windows and
+EGit might behave differently since they see different configuration options.
+This warning can be switched off on the Team > Git > Confirmations and Warnings preference page.
+!SESSION 2023-02-23 09:25:02.779 -----------------------------------------------
+eclipse.buildId=4.20.0.I20210611-1600
+java.version=16.0.1
+java.vendor=Oracle Corporation
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=ko_KR
+Framework arguments:  -product org.eclipse.epp.package.jee.product
+Command-line arguments:  -os win32 -ws win32 -arch x86_64 -product org.eclipse.epp.package.jee.product
+
+!ENTRY org.eclipse.jface 2 0 2023-02-23 09:25:09.419
+!MESSAGE Keybinding conflicts occurred.  They may interfere with normal accelerator operation.
+!SUBENTRY 1 org.eclipse.jface 2 0 2023-02-23 09:25:09.419
+!MESSAGE A conflict occurred for CTRL+SHIFT+T:
+Binding(CTRL+SHIFT+T,
+	ParameterizedCommand(Command(org.eclipse.jdt.ui.navigate.open.type,Open Type,
+		Open a type in a Java editor,
+		Category(org.eclipse.ui.category.navigate,Navigate,null,true),
+		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@6408a8ac,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.contexts.window,,,system)
+Binding(CTRL+SHIFT+T,
+	ParameterizedCommand(Command(org.eclipse.lsp4e.symbolinworkspace,Go to Symbol in Workspace,
+		,
+		Category(org.eclipse.lsp4e.category,Language Servers,null,true),
+		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@2f70d78c,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.contexts.window,,,system)
+
+!ENTRY org.eclipse.ui.navigator 2 0 2023-02-23 09:25:16.785
+!MESSAGE Can't find Navigator Content Descriptor with id: org.eclipse.jst.servlet.ui.EnhancedJavaRendering
+
+!ENTRY org.eclipse.ui.navigator 2 0 2023-02-23 09:25:16.788
+!MESSAGE Can't find Navigator Content Descriptor with id: org.eclipse.jst.servlet.ui.EnhancedJavaRendering
+
+!ENTRY org.eclipse.egit.ui 2 0 2023-02-23 09:25:16.858
+!MESSAGE Warning: The environment variable HOME is not set. The following directory will be used to store the Git
+user global configuration and to define the default location to store repositories: 'C:\Users\USER'. If this is
+not correct please set the HOME environment variable and restart Eclipse. Otherwise Git for Windows and
+EGit might behave differently since they see different configuration options.
+This warning can be switched off on the Team > Git > Confirmations and Warnings preference page.
+
+!ENTRY org.eclipse.lsp4e 1 0 2023-02-23 10:46:12.321
+!MESSAGE [Info]	ESLint server running in node v14.15.4
+
+!ENTRY org.eclipse.jdt.core 4 4 2023-02-23 11:16:17.544
+!MESSAGE Exception occurred during compilation unit conversion:
+----------------------------------- SOURCE BEGIN -------------------------------------
+package boardtwo.model;
+
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.util.*;
+
+public class BoardDAO {
+
+	private static BoardDAO instance = null;
+	
+	private BoardDAO() {	}
+
+	public static BoardDAO getInstance() {
+	
+		if(instance == null) {
+			synchronized (BoardDAO.class) {
+				instance = new BoardDAO();
+			}
+		}
+		return instance;
+	}
+	
+	// 게시판 작업을 하나하나 메소드로 작성해서 추가하면 됨
+	
+	
+	// 전체 글의 개수를 가져오는 메소드 구현
+	public int getArticleCount() {
+		Connection conn = null;
+		PreparedStatement pstmt = null;
+		ResultSet rs = null;
+		
+		int x =0;
+		
+		try {
+			conn = ConnUtil.getConnection();
+			String sql="select count(*) from board";
+			pstmt = conn.prepareStatement(sql);
+			rs = pstmt.executeQuery();
+			if(rs.next()) {
+				x = rs.getInt(1);
+			}
+		
+		}catch(Exception ss) {
+			ss.printStackTrace();
+		}finally {
+			if(rs != null)
+	    		try {
+	    			rs.close();
+	    		}catch(SQLException ex){}
+	    	
+	    	if(pstmt != null)
+	    		try {
+	    			pstmt.close();
+	    		}catch(SQLException ex){}
+	    	
+	    	if(conn != null)
+	    		try {
+	    			conn.close();
+	    		}catch(SQLException ex){}
+		}
+		
+		return x;
+		
+	}
+	
+	// 데이터 목록을 가져오는 메소드
+	public List<BoardVO> getArticles(int start, int end){
+		
+		Connection conn = null;
+		PreparedStatement pstmt = null;
+		ResultSet rs = null;
+		List<BoardVO> articleList = null;
+		
+		try {
+			conn = ConnUtil.getConnection();
+			// up 2
+			//String sql="select * from board order by num desc";// up3
+			String sql="select * from (select rownum rnum, num, writer, email, "
+					+ "subject, pass, regdate, readcount, ref, step, depth, content, "
+					+ "ip from (select * from board order by ref desc, step asc)) "
+					+ "where rnum >=? and rnum <=?";
+			
+			pstmt = conn.prepareStatement(sql);
+			
+			pstmt.setInt(1, start);
+			pstmt.setInt(2, end);
+			
+			rs = pstmt.executeQuery();
+			
+			if(rs.next()) {
+			
+				articleList = new ArrayList<BoardVO>(end-start+1);// up 4
+				do {
+					BoardVO article = new BoardVO();
+					
+					article.setNum(rs.getInt("num"));
+					article.setWriter(rs.getString("writer"));
+					article.setEmail(rs.getString("email"));
+					article.setSubject(rs.getString("subject"));
+					article.setPass(rs.getString("pass"));
+					article.setRegdate(rs.getTimestamp("regdate"));
+					article.setReadcount(rs.getInt("readcount"));
+					article.setRef(rs.getInt("ref"));
+					article.setStep(rs.getInt("step"));
+					article.setDepth(rs.getInt("depth"));
+					article.setContent(rs.getString("content"));
+					article.setIp(rs.getString("ip"));
+					
+					articleList.add(article);					
+					
+				}while(rs.next());
+				
+			}
+		
+		}catch(Exception ss) {
+			ss.printStackTrace();
+		}finally {
+			if(rs != null)
+	    		try {
+	    			rs.close();
+	    		}catch(SQLException ex){}
+	    	
+	    	if(pstmt != null)
+	    		try {
+	    			pstmt.close();
+	    		}catch(SQLException ex){}
+	    	
+	    	if(conn != null)
+	    		try {
+	    			conn.close();
+	    		}catch(SQLException ex){}
+		}
+		
+		return articleList;
+	}// end articleList
+	
+	
+	/* 실제 데이터베이스에 데이터를 저장할 insertArticle(BoardVO article) 메소드를 구현함
+	 */
+	public void insertArticle(BoardVO article) {
+		
+		Connection conn = null;
+		PreparedStatement pstmt = null;
+		ResultSet rs = null;
+		
+		int num = article.getNum();
+		int ref = article.getRef();
+		int step = article.getStep();
+		int depth = article.getDepth();
+		int number =0;
+		String sql ="";
+		
+		try {
+			conn = ConnUtil.getConnection();
+			
+			pstmt = conn.prepareStatement("select max(num) from board");
+			rs = pstmt.executeQuery();
+			if(rs.next()) number =rs.getInt(1)+1;
+			else number =1;
+			
+			if(num != 0) {// 답변글 일경우
+				sql ="update board set step=step+1 where ref=? and step > ?";
+				pstmt = conn.prepareStatement(sql);
+				pstmt.setInt(1, ref);
+				pstmt.setInt(2, step);
+				pstmt.executeUpdate();
+				step = step+1;
+				depth=depth+1;
+			}else {// 새글일 경우
+				ref = number;
+				step=0;
+				depth=0;
+			}
+			
+			// 쿼리 작성
+			sql ="insert into board(num, writer, email, subject, pass, "
+					+ "regdate, ref, step, depth, content, ip) "
+					+ "values(board_seq.nextval,?,?,?,?,?,?,?,?,?,?)";
+			pstmt=conn.prepareStatement(sql);
+			pstmt.setString(1, article.getWriter());
+			pstmt.setString(2, article.getEmail());
+			pstmt.setString(3, article.getSubject());
+			pstmt.setString(4, article.getPass());
+			pstmt.setTimestamp(5, article.getRegdate());
+			pstmt.setInt(6, ref);
+			pstmt.setInt(7, step);
+			pstmt.setInt(8, depth);
+			pstmt.setString(9,article.getContent());
+			pstmt.setString(10,article.getIp());
+			
+			pstmt.executeUpdate();
+			
+		}catch(Exception ss) {
+			ss.printStackTrace();
+		}finally {
+			if(rs != null)
+	    		try {
+	    			rs.close();
+	    		}catch(SQLException ex){}
+	    	
+	    	if(pstmt != null)
+	    		try {
+	    			pstmt.close();
+	    		}catch(SQLException ex){}
+	    	
+	    	if(conn != null)
+	    		try {
+	    			conn.close();
+	    		}catch(SQLException ex){}
+		}
+	}// end insertArticle
+	
+	
+	
+	
+	/*  list.jsp에서 글 제목을 클릭했을 경우 글 내용을 볼수 있도록 하는 작업
+	 *   
+	 *    글의 num를 매개변수로 해서 하나의 글에대한 상세한 정보를 
+	 *    데이터베이스에서 가져와야함
+	 */
+	
+	public BoardVO getArticle(int num) {
+		Connection conn = null;
+		PreparedStatement pstmt = null;
+		ResultSet rs = null;
+		
+		BoardVO article = null;
+		
+		try {
+			
+			conn = ConnUtil.getConnection();
+			
+			String sql="update board set readcount=readcount+1 where num=?";
+			pstmt = conn.prepareStatement(sql);
+			pstmt.setInt(1, num);
+			pstmt.executeUpdate();
+			
+			sql="select * from board where num=?";
+			pstmt = conn.prepareStatement(sql);
+			pstmt.setInt(1, num);
+			rs = pstmt.executeQuery();
+			
+			if(rs.next()) {
+				article = new BoardVO();
+				article.setNum(rs.getInt("num"));
+				article.setWriter(rs.getString("writer"));
+				article.setEmail(rs.getString("email"));
+				article.setSubject(rs.getString("subject"));
+				article.setPass(rs.getString("pass"));
+				article.setRegdate(rs.getTimestamp("regdate"));
+				article.setReadcount(rs.getInt("readcount"));
+				article.setRef(rs.getInt("ref"));
+				article.setStep(rs.getInt("step"));
+				article.setDepth(rs.getInt("depth"));
+				article.setContent(rs.getString("content"));
+				article.setIp(rs.getString("ip"));
+			}
+		}catch(Exception ss) {
+			ss.printStackTrace();
+		}finally {
+			if(rs != null)
+	    		try {
+	    			rs.close();
+	    		}catch(SQLException ex){}
+	    	
+	    	if(pstmt != null)
+	    		try {
+	    			pstmt.close();
+	    		}catch(SQLException ex){}
+	    	
+	    	if(conn != null)
+	    		try {
+	    			conn.close();
+	    		}catch(SQLException ex){}
+		}
+		return article;
+	}// end getArticle
+	
+	/*
+	 *  조회수는 증가하지 않으므로 제외시키고 번호에 해당하는 글을 가져옴 
+	 * 
+	 */
+	
+	public BoardVO updateGetArticle(int num) {
+		
+		Connection conn = null;
+		PreparedStatement pstmt = null;
+		ResultSet rs = null;
+		BoardVO article = null;
+		String sql="";
+		try {
+			
+			conn = ConnUtil.getConnection();
+		    			
+			sql="select * from board where num=?";
+			pstmt = conn.prepareStatement(sql);
+			pstmt.setInt(1, num);
+			rs = pstmt.executeQuery();
+			
+			if(rs.next()) {
+				article = new BoardVO();
+				article.setNum(rs.getInt("num"));
+				article.setWriter(rs.getString("writer"));
+				article.setEmail(rs.getString("email"));
+				article.setSubject(rs.getString("subject"));
+				article.setPass(rs.getString("pass"));
+				article.setRegdate(rs.getTimestamp("regdate"));
+				article.setReadcount(rs.getInt("readcount"));
+				article.setRef(rs.getInt("ref"));
+				article.setStep(rs.getInt("step"));
+				article.setDepth(rs.getInt("depth"));
+				article.setContent(rs.getString("content"));
+				article.setIp(rs.getString("ip"));
+			}
+		}catch(Exception ss) {
+			ss.printStackTrace();
+		}finally {
+			if(rs != null)
+	    		try {
+	    			rs.close();
+	    		}catch(SQLException ex){}
+	    	
+	    	if(pstmt != null)
+	    		try {
+	    			pstmt.close();
+	    		}catch(SQLException ex){}
+	    	
+	    	if(conn != null)
+	    		try {
+	    			conn.close();
+	    		}catch(SQLException ex){}
+		}
+		return article;
+	}// end updateGetArticle
+	
+	/*
+	 *  글 수정 페이지에서 글수정을 클릭하면 데이터베이스에서 실제 데이터가 수정이 
+	 *  이루어져야함  글수정 메소드 추가 
+	 */
+	public int updateArticle(BoardVO article) {
+		
+		Connection conn = null;
+		PreparedStatement pstmt = null;
+		ResultSet rs = null;
+		String dbpasswd ="";
+		String sql ="";
+		int result = -1;
+		
+		try {
+			conn = ConnUtil.getConnection();
+			sql="select pass from board where num=?";
+			pstmt = conn.prepareStatement(sql);
+			pstmt.setInt(1, article.getNum());
+			rs = pstmt.executeQuery();
+			if(rs.next()) {
+				
+				dbpasswd = rs.getString("pass");
+				if(dbpasswd.equals(article.getPass())) {
+					sql ="update board set writer=?, email=?, "
+							+ "subject=?, content=? where num=?";
+					pstmt = conn.prepareStatement(sql);
+					pstmt.setString(1, article.getWriter());
+					pstmt.setString(2, article.getEmail());
+					pstmt.setString(3, article.getSubject());
+					pstmt.setString(4, article.getContent());
+					pstmt.setInt(5, article.getNum());
+					pstmt.executeUpdate();
+					result =1;// 글 수정 성공
+				}else {
+					result = 0;// 글 수정 실패
+				}
+			}
+		}catch(Exception ss) {
+			ss.printStackTrace();
+		}finally {
+			if(rs != null)
+	    		try {
+	    			rs.close();
+	    		}catch(SQLException ex){}
+	    	
+	    	if(pstmt != null)
+	    		try {
+	    			pstmt.close();
+	    		}catch(SQLException ex){}
+	    	
+	    	if(conn != null)
+	    		try {
+	    			conn.close();
+	    		}catch(SQLException ex){}
+		}
+		
+		return result;
+	}
+	
+	/*  글 삭제
+	 *   
+	 *   글삭제처리를 하려면 입력받은 비밀번호와 데이터베이스에 저장된 비밀번호를 비교하여
+	 *   같으면 삭제처리한다.
+	 *   글삭제성공: 1, 비밀번호오류: 0, 글삭제글이 존재하지 않으면 : -1
+	 */
+	public int deleteArticle(int num, String pass) {
+		
+		Connection conn = null;
+		PreparedStatement pstmt = null;
+		ResultSet rs = null;
+		String dbpasswd ="";
+		String sql ="";
+		int result = -1;
+		
+		try {
+			conn = ConnUtil.getConnection();
+			sql="select pass from board where num=?";
+			pstmt = conn.prepareStatement(sql);
+			pstmt.setInt(1, num);
+			rs = pstmt.executeQuery();
+			if(rs.next()) {
+				
+				dbpasswd = rs.getString("pass");
+				if(dbpasswd.equals(pass)) {
+					sql ="delete from board where num=?";
+					pstmt = conn.prepareStatement(sql);
+					pstmt.setInt(1, num);
+					pstmt.executeUpdate();
+					result =1;// 글 삭제 성공
+				}else {
+					result = 0;// 비밀번호 오류
+				}
+			}
+		}catch(Exception ss) {
+			ss.printStackTrace();
+		}finally {
+			if(rs != null)
+	    		try {
+	    			rs.close();
+	    		}catch(SQLException ex){}
+	    	
+	    	if(pstmt != null)
+	    		try {
+	    			pstmt.close();
+	    		}catch(SQLException ex){}
+	    	
+	    	if(conn != null)
+	    		try {
+	    			conn.close();
+	    		}catch(SQLException ex){}
+		}
+		
+		return result;
+	}// end delete
+	
+	
+	
+	
+	// 검색한 내용이 몇개인지를 반환하는 함수(what:검색조건, content:검색내용)
+	public int getArticleCount(String find, String find_box) {
+		Connection conn = null;
+		PreparedStatement pstmt = null;
+		ResultSet rs = null;
+		
+		int x =0;
+		
+		try {
+			conn = ConnUtil.getConnection();
+			
+			if(find.equals("writer")) {
+				pstmt = conn.prepareStatement("select count(*) from board where=?");
+				pstmt/s
+
+			}
+			//String sql="select count(*) from board where "+what+" like '%"+content+"%'" ;
+			pstmt = conn.prepareStatement(sql);
+			rs = pstmt.executeQuery();
+			if(rs.next()) {
+				x = rs.getInt(1);
+			}
+		
+		}catch(Exception ss) {
+			ss.printStackTrace();
+		}finally {
+			if(rs != null)
+	    		try {
+	    			rs.close();
+	    		}catch(SQLException ex){}
+	    	
+	    	if(pstmt != null)
+	    		try {
+	    			pstmt.close();
+	    		}catch(SQLException ex){}
+	    	
+	    	if(conn != null)
+	    		try {
+	    			conn.close();
+	    		}catch(SQLException ex){}
+		}
+		
+		return x;
+		
+	}
+	
+	// 검색한 내용을  리스트로 받아서 반환하는 함수(what:검색조건, content:검색내용, start, end)
+	public List<BoardVO> getArticles(String what, String content, int start, int end){
+		
+		Connection conn = null;
+		PreparedStatement pstmt = null;
+		ResultSet rs = null;
+		List<BoardVO> articleList = null;
+		
+		try {
+			conn = ConnUtil.getConnection();
+			// up 2
+			//String sql="select * from board order by num desc";// up3
+			String sql="select * from (select rownum rnum, num, writer, email, "
+					+ "subject, pass, regdate, readcount, ref, step, depth, content, "
+					+ "ip from (select * from board where "+what+" like '%"+content+"%' order by ref desc, step asc)) "
+					+ "where rnum >=? and rnum <=?";
+			
+			pstmt = conn.prepareStatement(sql);
+			
+			pstmt.setInt(1, start);
+			pstmt.setInt(2, end);
+			
+			rs = pstmt.executeQuery();
+			
+			if(rs.next()) {
+			
+				articleList = new ArrayList<BoardVO>(end-start+1);// up 4
+				do {
+					BoardVO article = new BoardVO();
+					
+					article.setNum(rs.getInt("num"));
+					article.setWriter(rs.getString("writer"));
+					article.setEmail(rs.getString("email"));
+					article.setSubject(rs.getString("subject"));
+					article.setPass(rs.getString("pass"));
+					article.setRegdate(rs.getTimestamp("regdate"));
+					article.setReadcount(rs.getInt("readcount"));
+					article.setRef(rs.getInt("ref"));
+					article.setStep(rs.getInt("step"));
+					article.setDepth(rs.getInt("depth"));
+					article.setContent(rs.getString("content"));
+					article.setIp(rs.getString("ip"));
+					
+					articleList.add(article);					
+					
+				}while(rs.next());
+				
+			}
+		
+		}catch(Exception ss) {
+			ss.printStackTrace();
+		}finally {
+			if(rs != null)
+	    		try {
+	    			rs.close();
+	    		}catch(SQLException ex){}
+	    	
+	    	if(pstmt != null)
+	    		try {
+	    			pstmt.close();
+	    		}catch(SQLException ex){}
+	    	
+	    	if(conn != null)
+	    		try {
+	    			conn.close();
+	    		}catch(SQLException ex){}
+		}
+		
+		return articleList;
+	}// end articleList
+	
+}
+
+----------------------------------- SOURCE END -------------------------------------
+!STACK 0
+java.lang.IllegalArgumentException
+	at org.eclipse.jdt.core.dom.InfixExpression.setOperator(InfixExpression.java:383)
+	at org.eclipse.jdt.core.dom.ASTConverter.convert(ASTConverter.java:1287)
+	at org.eclipse.jdt.core.dom.ASTConverter.convert(ASTConverter.java:2031)
+	at org.eclipse.jdt.core.dom.ASTConverter.convertToParenthesizedExpression(ASTConverter.java:3795)
+	at org.eclipse.jdt.core.dom.ASTConverter.convert(ASTConverter.java:1943)
+	at org.eclipse.jdt.core.dom.ASTConverter.convert(ASTConverter.java:1204)
+	at org.eclipse.jdt.core.dom.ASTConverter.convert(ASTConverter.java:1974)
+	at org.eclipse.jdt.core.dom.ASTConverter.convert(ASTConverter.java:3052)
+	at org.eclipse.jdt.core.dom.ASTConverter.convert(ASTConverter.java:1383)
+	at org.eclipse.jdt.core.dom.ASTConverter.convert(ASTConverter.java:2970)
+	at org.eclipse.jdt.core.dom.ASTConverter.convert(ASTConverter.java:2214)
+	at org.eclipse.jdt.core.dom.ASTConverter.convert(ASTConverter.java:2994)
+	at org.eclipse.jdt.core.dom.ASTConverter.convert(ASTConverter.java:1383)
+	at org.eclipse.jdt.core.dom.ASTConverter.convert(ASTConverter.java:3235)
+	at org.eclipse.jdt.core.dom.ASTConverter.convert(ASTConverter.java:3012)
+	at org.eclipse.jdt.core.dom.ASTConverter.convert(ASTConverter.java:751)
+	at org.eclipse.jdt.core.dom.ASTConverter.buildBodyDeclarations(ASTConverter.java:208)
+	at org.eclipse.jdt.core.dom.ASTConverter.convert(ASTConverter.java:3347)
+	at org.eclipse.jdt.core.dom.ASTConverter.convert(ASTConverter.java:1524)
+	at org.eclipse.jdt.core.dom.AST.convertCompilationUnit(AST.java:494)
+	at org.eclipse.jdt.internal.core.CompilationUnit.buildStructure(CompilationUnit.java:201)
+	at org.eclipse.jdt.internal.core.Openable.generateInfos(Openable.java:266)
+	at org.eclipse.jdt.internal.core.JavaElement.openWhenClosed(JavaElement.java:597)
+	at org.eclipse.jdt.internal.core.CompilationUnit.makeConsistent(CompilationUnit.java:1142)
+	at org.eclipse.jdt.internal.core.ReconcileWorkingCopyOperation.makeConsistent(ReconcileWorkingCopyOperation.java:173)
+	at org.eclipse.jdt.internal.core.ReconcileWorkingCopyOperation.executeOperation(ReconcileWorkingCopyOperation.java:94)
+	at org.eclipse.jdt.internal.core.JavaModelOperation.run(JavaModelOperation.java:740)
+	at org.eclipse.jdt.internal.core.JavaModelOperation.runOperation(JavaModelOperation.java:806)
+	at org.eclipse.jdt.internal.core.CompilationUnit.reconcile(CompilationUnit.java:1319)
+	at org.eclipse.jdt.internal.ui.text.java.JavaReconcilingStrategy.reconcile(JavaReconcilingStrategy.java:131)
+	at org.eclipse.jdt.internal.ui.text.java.JavaReconcilingStrategy.access$0(JavaReconcilingStrategy.java:113)
+	at org.eclipse.jdt.internal.ui.text.java.JavaReconcilingStrategy$1.run(JavaReconcilingStrategy.java:93)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:45)
+	at org.eclipse.jdt.internal.ui.text.java.JavaReconcilingStrategy.reconcile(JavaReconcilingStrategy.java:90)
+	at org.eclipse.jdt.internal.ui.text.java.JavaReconcilingStrategy.reconcile(JavaReconcilingStrategy.java:157)
+	at org.eclipse.jdt.internal.ui.text.CompositeReconcilingStrategy.reconcile(CompositeReconcilingStrategy.java:94)
+	at org.eclipse.jdt.internal.ui.text.JavaCompositeReconcilingStrategy.reconcile(JavaCompositeReconcilingStrategy.java:107)
+	at org.eclipse.jface.text.reconciler.MonoReconciler.process(MonoReconciler.java:76)
+	at org.eclipse.jface.text.reconciler.AbstractReconciler$BackgroundThread.run(AbstractReconciler.java:210)
+
+!ENTRY org.eclipse.jdt.ui 4 2 2023-02-23 11:16:17.552
+!MESSAGE Problems occurred when invoking code from plug-in: "org.eclipse.jdt.ui".
+!STACK 0
+java.lang.IllegalArgumentException
+	at org.eclipse.jdt.core.dom.InfixExpression.setOperator(InfixExpression.java:383)
+	at org.eclipse.jdt.core.dom.ASTConverter.convert(ASTConverter.java:1287)
+	at org.eclipse.jdt.core.dom.ASTConverter.convert(ASTConverter.java:2031)
+	at org.eclipse.jdt.core.dom.ASTConverter.convertToParenthesizedExpression(ASTConverter.java:3795)
+	at org.eclipse.jdt.core.dom.ASTConverter.convert(ASTConverter.java:1943)
+	at org.eclipse.jdt.core.dom.ASTConverter.convert(ASTConverter.java:1204)
+	at org.eclipse.jdt.core.dom.ASTConverter.convert(ASTConverter.java:1974)
+	at org.eclipse.jdt.core.dom.ASTConverter.convert(ASTConverter.java:3052)
+	at org.eclipse.jdt.core.dom.ASTConverter.convert(ASTConverter.java:1383)
+	at org.eclipse.jdt.core.dom.ASTConverter.convert(ASTConverter.java:2970)
+	at org.eclipse.jdt.core.dom.ASTConverter.convert(ASTConverter.java:2214)
+	at org.eclipse.jdt.core.dom.ASTConverter.convert(ASTConverter.java:2994)
+	at org.eclipse.jdt.core.dom.ASTConverter.convert(ASTConverter.java:1383)
+	at org.eclipse.jdt.core.dom.ASTConverter.convert(ASTConverter.java:3235)
+	at org.eclipse.jdt.core.dom.ASTConverter.convert(ASTConverter.java:3012)
+	at org.eclipse.jdt.core.dom.ASTConverter.convert(ASTConverter.java:751)
+	at org.eclipse.jdt.core.dom.ASTConverter.buildBodyDeclarations(ASTConverter.java:208)
+	at org.eclipse.jdt.core.dom.ASTConverter.convert(ASTConverter.java:3347)
+	at org.eclipse.jdt.core.dom.ASTConverter.convert(ASTConverter.java:1524)
+	at org.eclipse.jdt.core.dom.AST.convertCompilationUnit(AST.java:494)
+	at org.eclipse.jdt.internal.core.CompilationUnit.buildStructure(CompilationUnit.java:201)
+	at org.eclipse.jdt.internal.core.Openable.generateInfos(Openable.java:266)
+	at org.eclipse.jdt.internal.core.JavaElement.openWhenClosed(JavaElement.java:597)
+	at org.eclipse.jdt.internal.core.CompilationUnit.makeConsistent(CompilationUnit.java:1142)
+	at org.eclipse.jdt.internal.core.ReconcileWorkingCopyOperation.makeConsistent(ReconcileWorkingCopyOperation.java:173)
+	at org.eclipse.jdt.internal.core.ReconcileWorkingCopyOperation.executeOperation(ReconcileWorkingCopyOperation.java:94)
+	at org.eclipse.jdt.internal.core.JavaModelOperation.run(JavaModelOperation.java:740)
+	at org.eclipse.jdt.internal.core.JavaModelOperation.runOperation(JavaModelOperation.java:806)
+	at org.eclipse.jdt.internal.core.CompilationUnit.reconcile(CompilationUnit.java:1319)
+	at org.eclipse.jdt.internal.ui.text.java.JavaReconcilingStrategy.reconcile(JavaReconcilingStrategy.java:131)
+	at org.eclipse.jdt.internal.ui.text.java.JavaReconcilingStrategy.access$0(JavaReconcilingStrategy.java:113)
+	at org.eclipse.jdt.internal.ui.text.java.JavaReconcilingStrategy$1.run(JavaReconcilingStrategy.java:93)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:45)
+	at org.eclipse.jdt.internal.ui.text.java.JavaReconcilingStrategy.reconcile(JavaReconcilingStrategy.java:90)
+	at org.eclipse.jdt.internal.ui.text.java.JavaReconcilingStrategy.reconcile(JavaReconcilingStrategy.java:157)
+	at org.eclipse.jdt.internal.ui.text.CompositeReconcilingStrategy.reconcile(CompositeReconcilingStrategy.java:94)
+	at org.eclipse.jdt.internal.ui.text.JavaCompositeReconcilingStrategy.reconcile(JavaCompositeReconcilingStrategy.java:107)
+	at org.eclipse.jface.text.reconciler.MonoReconciler.process(MonoReconciler.java:76)
+	at org.eclipse.jface.text.reconciler.AbstractReconciler$BackgroundThread.run(AbstractReconciler.java:210)
+
+!ENTRY org.eclipse.jdt.ui 4 0 2023-02-23 11:16:17.555
+!MESSAGE Error in JDT Core during reconcile
+!STACK 0
+java.lang.IllegalArgumentException
+	at org.eclipse.jdt.core.dom.InfixExpression.setOperator(InfixExpression.java:383)
+	at org.eclipse.jdt.core.dom.ASTConverter.convert(ASTConverter.java:1287)
+	at org.eclipse.jdt.core.dom.ASTConverter.convert(ASTConverter.java:2031)
+	at org.eclipse.jdt.core.dom.ASTConverter.convertToParenthesizedExpression(ASTConverter.java:3795)
+	at org.eclipse.jdt.core.dom.ASTConverter.convert(ASTConverter.java:1943)
+	at org.eclipse.jdt.core.dom.ASTConverter.convert(ASTConverter.java:1204)
+	at org.eclipse.jdt.core.dom.ASTConverter.convert(ASTConverter.java:1974)
+	at org.eclipse.jdt.core.dom.ASTConverter.convert(ASTConverter.java:3052)
+	at org.eclipse.jdt.core.dom.ASTConverter.convert(ASTConverter.java:1383)
+	at org.eclipse.jdt.core.dom.ASTConverter.convert(ASTConverter.java:2970)
+	at org.eclipse.jdt.core.dom.ASTConverter.convert(ASTConverter.java:2214)
+	at org.eclipse.jdt.core.dom.ASTConverter.convert(ASTConverter.java:2994)
+	at org.eclipse.jdt.core.dom.ASTConverter.convert(ASTConverter.java:1383)
+	at org.eclipse.jdt.core.dom.ASTConverter.convert(ASTConverter.java:3235)
+	at org.eclipse.jdt.core.dom.ASTConverter.convert(ASTConverter.java:3012)
+	at org.eclipse.jdt.core.dom.ASTConverter.convert(ASTConverter.java:751)
+	at org.eclipse.jdt.core.dom.ASTConverter.buildBodyDeclarations(ASTConverter.java:208)
+	at org.eclipse.jdt.core.dom.ASTConverter.convert(ASTConverter.java:3347)
+	at org.eclipse.jdt.core.dom.ASTConverter.convert(ASTConverter.java:1524)
+	at org.eclipse.jdt.core.dom.AST.convertCompilationUnit(AST.java:494)
+	at org.eclipse.jdt.internal.core.CompilationUnit.buildStructure(CompilationUnit.java:201)
+	at org.eclipse.jdt.internal.core.Openable.generateInfos(Openable.java:266)
+	at org.eclipse.jdt.internal.core.JavaElement.openWhenClosed(JavaElement.java:597)
+	at org.eclipse.jdt.internal.core.CompilationUnit.makeConsistent(CompilationUnit.java:1142)
+	at org.eclipse.jdt.internal.core.ReconcileWorkingCopyOperation.makeConsistent(ReconcileWorkingCopyOperation.java:173)
+	at org.eclipse.jdt.internal.core.ReconcileWorkingCopyOperation.executeOperation(ReconcileWorkingCopyOperation.java:94)
+	at org.eclipse.jdt.internal.core.JavaModelOperation.run(JavaModelOperation.java:740)
+	at org.eclipse.jdt.internal.core.JavaModelOperation.runOperation(JavaModelOperation.java:806)
+	at org.eclipse.jdt.internal.core.CompilationUnit.reconcile(CompilationUnit.java:1319)
+	at org.eclipse.jdt.internal.ui.text.java.JavaReconcilingStrategy.reconcile(JavaReconcilingStrategy.java:131)
+	at org.eclipse.jdt.internal.ui.text.java.JavaReconcilingStrategy.access$0(JavaReconcilingStrategy.java:113)
+	at org.eclipse.jdt.internal.ui.text.java.JavaReconcilingStrategy$1.run(JavaReconcilingStrategy.java:93)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:45)
+	at org.eclipse.jdt.internal.ui.text.java.JavaReconcilingStrategy.reconcile(JavaReconcilingStrategy.java:90)
+	at org.eclipse.jdt.internal.ui.text.java.JavaReconcilingStrategy.reconcile(JavaReconcilingStrategy.java:157)
+	at org.eclipse.jdt.internal.ui.text.CompositeReconcilingStrategy.reconcile(CompositeReconcilingStrategy.java:94)
+	at org.eclipse.jdt.internal.ui.text.JavaCompositeReconcilingStrategy.reconcile(JavaCompositeReconcilingStrategy.java:107)
+	at org.eclipse.jface.text.reconciler.MonoReconciler.process(MonoReconciler.java:76)
+	at org.eclipse.jface.text.reconciler.AbstractReconciler$BackgroundThread.run(AbstractReconciler.java:210)
+
+!ENTRY org.eclipse.jdt.core 4 4 2023-02-23 11:16:17.573
+!MESSAGE Exception occurred during compilation unit conversion:
+----------------------------------- SOURCE BEGIN -------------------------------------
+package boardtwo.model;
+
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.util.*;
+
+public class BoardDAO {
+
+	private static BoardDAO instance = null;
+	
+	private BoardDAO() {	}
+
+	public static BoardDAO getInstance() {
+	
+		if(instance == null) {
+			synchronized (BoardDAO.class) {
+				instance = new BoardDAO();
+			}
+		}
+		return instance;
+	}
+	
+	// 게시판 작업을 하나하나 메소드로 작성해서 추가하면 됨
+	
+	
+	// 전체 글의 개수를 가져오는 메소드 구현
+	public int getArticleCount() {
+		Connection conn = null;
+		PreparedStatement pstmt = null;
+		ResultSet rs = null;
+		
+		int x =0;
+		
+		try {
+			conn = ConnUtil.getConnection();
+			String sql="select count(*) from board";
+			pstmt = conn.prepareStatement(sql);
+			rs = pstmt.executeQuery();
+			if(rs.next()) {
+				x = rs.getInt(1);
+			}
+		
+		}catch(Exception ss) {
+			ss.printStackTrace();
+		}finally {
+			if(rs != null)
+	    		try {
+	    			rs.close();
+	    		}catch(SQLException ex){}
+	    	
+	    	if(pstmt != null)
+	    		try {
+	    			pstmt.close();
+	    		}catch(SQLException ex){}
+	    	
+	    	if(conn != null)
+	    		try {
+	    			conn.close();
+	    		}catch(SQLException ex){}
+		}
+		
+		return x;
+		
+	}
+	
+	// 데이터 목록을 가져오는 메소드
+	public List<BoardVO> getArticles(int start, int end){
+		
+		Connection conn = null;
+		PreparedStatement pstmt = null;
+		ResultSet rs = null;
+		List<BoardVO> articleList = null;
+		
+		try {
+			conn = ConnUtil.getConnection();
+			// up 2
+			//String sql="select * from board order by num desc";// up3
+			String sql="select * from (select rownum rnum, num, writer, email, "
+					+ "subject, pass, regdate, readcount, ref, step, depth, content, "
+					+ "ip from (select * from board order by ref desc, step asc)) "
+					+ "where rnum >=? and rnum <=?";
+			
+			pstmt = conn.prepareStatement(sql);
+			
+			pstmt.setInt(1, start);
+			pstmt.setInt(2, end);
+			
+			rs = pstmt.executeQuery();
+			
+			if(rs.next()) {
+			
+				articleList = new ArrayList<BoardVO>(end-start+1);// up 4
+				do {
+					BoardVO article = new BoardVO();
+					
+					article.setNum(rs.getInt("num"));
+					article.setWriter(rs.getString("writer"));
+					article.setEmail(rs.getString("email"));
+					article.setSubject(rs.getString("subject"));
+					article.setPass(rs.getString("pass"));
+					article.setRegdate(rs.getTimestamp("regdate"));
+					article.setReadcount(rs.getInt("readcount"));
+					article.setRef(rs.getInt("ref"));
+					article.setStep(rs.getInt("step"));
+					article.setDepth(rs.getInt("depth"));
+					article.setContent(rs.getString("content"));
+					article.setIp(rs.getString("ip"));
+					
+					articleList.add(article);					
+					
+				}while(rs.next());
+				
+			}
+		
+		}catch(Exception ss) {
+			ss.printStackTrace();
+		}finally {
+			if(rs != null)
+	    		try {
+	    			rs.close();
+	    		}catch(SQLException ex){}
+	    	
+	    	if(pstmt != null)
+	    		try {
+	    			pstmt.close();
+	    		}catch(SQLException ex){}
+	    	
+	    	if(conn != null)
+	    		try {
+	    			conn.close();
+	    		}catch(SQLException ex){}
+		}
+		
+		return articleList;
+	}// end articleList
+	
+	
+	/* 실제 데이터베이스에 데이터를 저장할 insertArticle(BoardVO article) 메소드를 구현함
+	 */
+	public void insertArticle(BoardVO article) {
+		
+		Connection conn = null;
+		PreparedStatement pstmt = null;
+		ResultSet rs = null;
+		
+		int num = article.getNum();
+		int ref = article.getRef();
+		int step = article.getStep();
+		int depth = article.getDepth();
+		int number =0;
+		String sql ="";
+		
+		try {
+			conn = ConnUtil.getConnection();
+			
+			pstmt = conn.prepareStatement("select max(num) from board");
+			rs = pstmt.executeQuery();
+			if(rs.next()) number =rs.getInt(1)+1;
+			else number =1;
+			
+			if(num != 0) {// 답변글 일경우
+				sql ="update board set step=step+1 where ref=? and step > ?";
+				pstmt = conn.prepareStatement(sql);
+				pstmt.setInt(1, ref);
+				pstmt.setInt(2, step);
+				pstmt.executeUpdate();
+				step = step+1;
+				depth=depth+1;
+			}else {// 새글일 경우
+				ref = number;
+				step=0;
+				depth=0;
+			}
+			
+			// 쿼리 작성
+			sql ="insert into board(num, writer, email, subject, pass, "
+					+ "regdate, ref, step, depth, content, ip) "
+					+ "values(board_seq.nextval,?,?,?,?,?,?,?,?,?,?)";
+			pstmt=conn.prepareStatement(sql);
+			pstmt.setString(1, article.getWriter());
+			pstmt.setString(2, article.getEmail());
+			pstmt.setString(3, article.getSubject());
+			pstmt.setString(4, article.getPass());
+			pstmt.setTimestamp(5, article.getRegdate());
+			pstmt.setInt(6, ref);
+			pstmt.setInt(7, step);
+			pstmt.setInt(8, depth);
+			pstmt.setString(9,article.getContent());
+			pstmt.setString(10,article.getIp());
+			
+			pstmt.executeUpdate();
+			
+		}catch(Exception ss) {
+			ss.printStackTrace();
+		}finally {
+			if(rs != null)
+	    		try {
+	    			rs.close();
+	    		}catch(SQLException ex){}
+	    	
+	    	if(pstmt != null)
+	    		try {
+	    			pstmt.close();
+	    		}catch(SQLException ex){}
+	    	
+	    	if(conn != null)
+	    		try {
+	    			conn.close();
+	    		}catch(SQLException ex){}
+		}
+	}// end insertArticle
+	
+	
+	
+	
+	/*  list.jsp에서 글 제목을 클릭했을 경우 글 내용을 볼수 있도록 하는 작업
+	 *   
+	 *    글의 num를 매개변수로 해서 하나의 글에대한 상세한 정보를 
+	 *    데이터베이스에서 가져와야함
+	 */
+	
+	public BoardVO getArticle(int num) {
+		Connection conn = null;
+		PreparedStatement pstmt = null;
+		ResultSet rs = null;
+		
+		BoardVO article = null;
+		
+		try {
+			
+			conn = ConnUtil.getConnection();
+			
+			String sql="update board set readcount=readcount+1 where num=?";
+			pstmt = conn.prepareStatement(sql);
+			pstmt.setInt(1, num);
+			pstmt.executeUpdate();
+			
+			sql="select * from board where num=?";
+			pstmt = conn.prepareStatement(sql);
+			pstmt.setInt(1, num);
+			rs = pstmt.executeQuery();
+			
+			if(rs.next()) {
+				article = new BoardVO();
+				article.setNum(rs.getInt("num"));
+				article.setWriter(rs.getString("writer"));
+				article.setEmail(rs.getString("email"));
+				article.setSubject(rs.getString("subject"));
+				article.setPass(rs.getString("pass"));
+				article.setRegdate(rs.getTimestamp("regdate"));
+				article.setReadcount(rs.getInt("readcount"));
+				article.setRef(rs.getInt("ref"));
+				article.setStep(rs.getInt("step"));
+				article.setDepth(rs.getInt("depth"));
+				article.setContent(rs.getString("content"));
+				article.setIp(rs.getString("ip"));
+			}
+		}catch(Exception ss) {
+			ss.printStackTrace();
+		}finally {
+			if(rs != null)
+	    		try {
+	    			rs.close();
+	    		}catch(SQLException ex){}
+	    	
+	    	if(pstmt != null)
+	    		try {
+	    			pstmt.close();
+	    		}catch(SQLException ex){}
+	    	
+	    	if(conn != null)
+	    		try {
+	    			conn.close();
+	    		}catch(SQLException ex){}
+		}
+		return article;
+	}// end getArticle
+	
+	/*
+	 *  조회수는 증가하지 않으므로 제외시키고 번호에 해당하는 글을 가져옴 
+	 * 
+	 */
+	
+	public BoardVO updateGetArticle(int num) {
+		
+		Connection conn = null;
+		PreparedStatement pstmt = null;
+		ResultSet rs = null;
+		BoardVO article = null;
+		String sql="";
+		try {
+			
+			conn = ConnUtil.getConnection();
+		    			
+			sql="select * from board where num=?";
+			pstmt = conn.prepareStatement(sql);
+			pstmt.setInt(1, num);
+			rs = pstmt.executeQuery();
+			
+			if(rs.next()) {
+				article = new BoardVO();
+				article.setNum(rs.getInt("num"));
+				article.setWriter(rs.getString("writer"));
+				article.setEmail(rs.getString("email"));
+				article.setSubject(rs.getString("subject"));
+				article.setPass(rs.getString("pass"));
+				article.setRegdate(rs.getTimestamp("regdate"));
+				article.setReadcount(rs.getInt("readcount"));
+				article.setRef(rs.getInt("ref"));
+				article.setStep(rs.getInt("step"));
+				article.setDepth(rs.getInt("depth"));
+				article.setContent(rs.getString("content"));
+				article.setIp(rs.getString("ip"));
+			}
+		}catch(Exception ss) {
+			ss.printStackTrace();
+		}finally {
+			if(rs != null)
+	    		try {
+	    			rs.close();
+	    		}catch(SQLException ex){}
+	    	
+	    	if(pstmt != null)
+	    		try {
+	    			pstmt.close();
+	    		}catch(SQLException ex){}
+	    	
+	    	if(conn != null)
+	    		try {
+	    			conn.close();
+	    		}catch(SQLException ex){}
+		}
+		return article;
+	}// end updateGetArticle
+	
+	/*
+	 *  글 수정 페이지에서 글수정을 클릭하면 데이터베이스에서 실제 데이터가 수정이 
+	 *  이루어져야함  글수정 메소드 추가 
+	 */
+	public int updateArticle(BoardVO article) {
+		
+		Connection conn = null;
+		PreparedStatement pstmt = null;
+		ResultSet rs = null;
+		String dbpasswd ="";
+		String sql ="";
+		int result = -1;
+		
+		try {
+			conn = ConnUtil.getConnection();
+			sql="select pass from board where num=?";
+			pstmt = conn.prepareStatement(sql);
+			pstmt.setInt(1, article.getNum());
+			rs = pstmt.executeQuery();
+			if(rs.next()) {
+				
+				dbpasswd = rs.getString("pass");
+				if(dbpasswd.equals(article.getPass())) {
+					sql ="update board set writer=?, email=?, "
+							+ "subject=?, content=? where num=?";
+					pstmt = conn.prepareStatement(sql);
+					pstmt.setString(1, article.getWriter());
+					pstmt.setString(2, article.getEmail());
+					pstmt.setString(3, article.getSubject());
+					pstmt.setString(4, article.getContent());
+					pstmt.setInt(5, article.getNum());
+					pstmt.executeUpdate();
+					result =1;// 글 수정 성공
+				}else {
+					result = 0;// 글 수정 실패
+				}
+			}
+		}catch(Exception ss) {
+			ss.printStackTrace();
+		}finally {
+			if(rs != null)
+	    		try {
+	    			rs.close();
+	    		}catch(SQLException ex){}
+	    	
+	    	if(pstmt != null)
+	    		try {
+	    			pstmt.close();
+	    		}catch(SQLException ex){}
+	    	
+	    	if(conn != null)
+	    		try {
+	    			conn.close();
+	    		}catch(SQLException ex){}
+		}
+		
+		return result;
+	}
+	
+	/*  글 삭제
+	 *   
+	 *   글삭제처리를 하려면 입력받은 비밀번호와 데이터베이스에 저장된 비밀번호를 비교하여
+	 *   같으면 삭제처리한다.
+	 *   글삭제성공: 1, 비밀번호오류: 0, 글삭제글이 존재하지 않으면 : -1
+	 */
+	public int deleteArticle(int num, String pass) {
+		
+		Connection conn = null;
+		PreparedStatement pstmt = null;
+		ResultSet rs = null;
+		String dbpasswd ="";
+		String sql ="";
+		int result = -1;
+		
+		try {
+			conn = ConnUtil.getConnection();
+			sql="select pass from board where num=?";
+			pstmt = conn.prepareStatement(sql);
+			pstmt.setInt(1, num);
+			rs = pstmt.executeQuery();
+			if(rs.next()) {
+				
+				dbpasswd = rs.getString("pass");
+				if(dbpasswd.equals(pass)) {
+					sql ="delete from board where num=?";
+					pstmt = conn.prepareStatement(sql);
+					pstmt.setInt(1, num);
+					pstmt.executeUpdate();
+					result =1;// 글 삭제 성공
+				}else {
+					result = 0;// 비밀번호 오류
+				}
+			}
+		}catch(Exception ss) {
+			ss.printStackTrace();
+		}finally {
+			if(rs != null)
+	    		try {
+	    			rs.close();
+	    		}catch(SQLException ex){}
+	    	
+	    	if(pstmt != null)
+	    		try {
+	    			pstmt.close();
+	    		}catch(SQLException ex){}
+	    	
+	    	if(conn != null)
+	    		try {
+	    			conn.close();
+	    		}catch(SQLException ex){}
+		}
+		
+		return result;
+	}// end delete
+	
+	
+	
+	
+	// 검색한 내용이 몇개인지를 반환하는 함수(what:검색조건, content:검색내용)
+	public int getArticleCount(String find, String find_box) {
+		Connection conn = null;
+		PreparedStatement pstmt = null;
+		ResultSet rs = null;
+		
+		int x =0;
+		
+		try {
+			conn = ConnUtil.getConnection();
+			
+			if(find.equals("writer")) {
+				pstmt = conn.prepareStatement("select count(*) from board where=?");
+				pstmt/s
+
+			}
+			//String sql="select count(*) from board where "+what+" like '%"+content+"%'" ;
+			pstmt = conn.prepareStatement(sql);
+			rs = pstmt.executeQuery();
+			if(rs.next()) {
+				x = rs.getInt(1);
+			}
+		
+		}catch(Exception ss) {
+			ss.printStackTrace();
+		}finally {
+			if(rs != null)
+	    		try {
+	    			rs.close();
+	    		}catch(SQLException ex){}
+	    	
+	    	if(pstmt != null)
+	    		try {
+	    			pstmt.close();
+	    		}catch(SQLException ex){}
+	    	
+	    	if(conn != null)
+	    		try {
+	    			conn.close();
+	    		}catch(SQLException ex){}
+		}
+		
+		return x;
+		
+	}
+	
+	// 검색한 내용을  리스트로 받아서 반환하는 함수(what:검색조건, content:검색내용, start, end)
+	public List<BoardVO> getArticles(String what, String content, int start, int end){
+		
+		Connection conn = null;
+		PreparedStatement pstmt = null;
+		ResultSet rs = null;
+		List<BoardVO> articleList = null;
+		
+		try {
+			conn = ConnUtil.getConnection();
+			// up 2
+			//String sql="select * from board order by num desc";// up3
+			String sql="select * from (select rownum rnum, num, writer, email, "
+					+ "subject, pass, regdate, readcount, ref, step, depth, content, "
+					+ "ip from (select * from board where "+what+" like '%"+content+"%' order by ref desc, step asc)) "
+					+ "where rnum >=? and rnum <=?";
+			
+			pstmt = conn.prepareStatement(sql);
+			
+			pstmt.setInt(1, start);
+			pstmt.setInt(2, end);
+			
+			rs = pstmt.executeQuery();
+			
+			if(rs.next()) {
+			
+				articleList = new ArrayList<BoardVO>(end-start+1);// up 4
+				do {
+					BoardVO article = new BoardVO();
+					
+					article.setNum(rs.getInt("num"));
+					article.setWriter(rs.getString("writer"));
+					article.setEmail(rs.getString("email"));
+					article.setSubject(rs.getString("subject"));
+					article.setPass(rs.getString("pass"));
+					article.setRegdate(rs.getTimestamp("regdate"));
+					article.setReadcount(rs.getInt("readcount"));
+					article.setRef(rs.getInt("ref"));
+					article.setStep(rs.getInt("step"));
+					article.setDepth(rs.getInt("depth"));
+					article.setContent(rs.getString("content"));
+					article.setIp(rs.getString("ip"));
+					
+					articleList.add(article);					
+					
+				}while(rs.next());
+				
+			}
+		
+		}catch(Exception ss) {
+			ss.printStackTrace();
+		}finally {
+			if(rs != null)
+	    		try {
+	    			rs.close();
+	    		}catch(SQLException ex){}
+	    	
+	    	if(pstmt != null)
+	    		try {
+	    			pstmt.close();
+	    		}catch(SQLException ex){}
+	    	
+	    	if(conn != null)
+	    		try {
+	    			conn.close();
+	    		}catch(SQLException ex){}
+		}
+		
+		return articleList;
+	}// end articleList
+	
+}
+
+----------------------------------- SOURCE END -------------------------------------
+!STACK 0
+java.lang.IllegalArgumentException
+	at org.eclipse.jdt.core.dom.InfixExpression.setOperator(InfixExpression.java:383)
+	at org.eclipse.jdt.core.dom.ASTConverter.convert(ASTConverter.java:1287)
+	at org.eclipse.jdt.core.dom.ASTConverter.convert(ASTConverter.java:2031)
+	at org.eclipse.jdt.core.dom.ASTConverter.convertToParenthesizedExpression(ASTConverter.java:3795)
+	at org.eclipse.jdt.core.dom.ASTConverter.convert(ASTConverter.java:1943)
+	at org.eclipse.jdt.core.dom.ASTConverter.convert(ASTConverter.java:1204)
+	at org.eclipse.jdt.core.dom.ASTConverter.convert(ASTConverter.java:1974)
+	at org.eclipse.jdt.core.dom.ASTConverter.convert(ASTConverter.java:3052)
+	at org.eclipse.jdt.core.dom.ASTConverter.convert(ASTConverter.java:1383)
+	at org.eclipse.jdt.core.dom.ASTConverter.convert(ASTConverter.java:2970)
+	at org.eclipse.jdt.core.dom.ASTConverter.convert(ASTConverter.java:2214)
+	at org.eclipse.jdt.core.dom.ASTConverter.convert(ASTConverter.java:2994)
+	at org.eclipse.jdt.core.dom.ASTConverter.convert(ASTConverter.java:1383)
+	at org.eclipse.jdt.core.dom.ASTConverter.convert(ASTConverter.java:3235)
+	at org.eclipse.jdt.core.dom.ASTConverter.convert(ASTConverter.java:3012)
+	at org.eclipse.jdt.core.dom.ASTConverter.convert(ASTConverter.java:751)
+	at org.eclipse.jdt.core.dom.ASTConverter.buildBodyDeclarations(ASTConverter.java:208)
+	at org.eclipse.jdt.core.dom.ASTConverter.convert(ASTConverter.java:3347)
+	at org.eclipse.jdt.core.dom.ASTConverter.convert(ASTConverter.java:1524)
+	at org.eclipse.jdt.core.dom.CompilationUnitResolver.convert(CompilationUnitResolver.java:323)
+	at org.eclipse.jdt.core.dom.ASTParser.internalCreateAST(ASTParser.java:1231)
+	at org.eclipse.jdt.core.dom.ASTParser.createAST(ASTParser.java:820)
+	at org.eclipse.jdt.core.manipulation.CoreASTProvider$1.run(CoreASTProvider.java:272)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:45)
+	at org.eclipse.jdt.core.manipulation.CoreASTProvider.createAST(CoreASTProvider.java:264)
+	at org.eclipse.jdt.core.manipulation.CoreASTProvider.getAST(CoreASTProvider.java:197)
+	at org.eclipse.jdt.core.manipulation.CoreASTProvider.getAST(CoreASTProvider.java:187)
+	at org.eclipse.jdt.core.manipulation.SharedASTProviderCore.getAST(SharedASTProviderCore.java:138)
+	at org.eclipse.jdt.internal.ui.viewsupport.SelectionListenerWithASTManager$PartListenerGroup.calculateASTandInform(SelectionListenerWithASTManager.java:166)
+	at org.eclipse.jdt.internal.ui.viewsupport.SelectionListenerWithASTManager$PartListenerGroup$1.run(SelectionListenerWithASTManager.java:151)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+
+!ENTRY org.eclipse.jdt.core.manipulation 4 2 2023-02-23 11:16:17.574
+!MESSAGE Problems occurred when invoking code from plug-in: "org.eclipse.jdt.core.manipulation".
+!STACK 0
+java.lang.IllegalArgumentException
+	at org.eclipse.jdt.core.dom.InfixExpression.setOperator(InfixExpression.java:383)
+	at org.eclipse.jdt.core.dom.ASTConverter.convert(ASTConverter.java:1287)
+	at org.eclipse.jdt.core.dom.ASTConverter.convert(ASTConverter.java:2031)
+	at org.eclipse.jdt.core.dom.ASTConverter.convertToParenthesizedExpression(ASTConverter.java:3795)
+	at org.eclipse.jdt.core.dom.ASTConverter.convert(ASTConverter.java:1943)
+	at org.eclipse.jdt.core.dom.ASTConverter.convert(ASTConverter.java:1204)
+	at org.eclipse.jdt.core.dom.ASTConverter.convert(ASTConverter.java:1974)
+	at org.eclipse.jdt.core.dom.ASTConverter.convert(ASTConverter.java:3052)
+	at org.eclipse.jdt.core.dom.ASTConverter.convert(ASTConverter.java:1383)
+	at org.eclipse.jdt.core.dom.ASTConverter.convert(ASTConverter.java:2970)
+	at org.eclipse.jdt.core.dom.ASTConverter.convert(ASTConverter.java:2214)
+	at org.eclipse.jdt.core.dom.ASTConverter.convert(ASTConverter.java:2994)
+	at org.eclipse.jdt.core.dom.ASTConverter.convert(ASTConverter.java:1383)
+	at org.eclipse.jdt.core.dom.ASTConverter.convert(ASTConverter.java:3235)
+	at org.eclipse.jdt.core.dom.ASTConverter.convert(ASTConverter.java:3012)
+	at org.eclipse.jdt.core.dom.ASTConverter.convert(ASTConverter.java:751)
+	at org.eclipse.jdt.core.dom.ASTConverter.buildBodyDeclarations(ASTConverter.java:208)
+	at org.eclipse.jdt.core.dom.ASTConverter.convert(ASTConverter.java:3347)
+	at org.eclipse.jdt.core.dom.ASTConverter.convert(ASTConverter.java:1524)
+	at org.eclipse.jdt.core.dom.CompilationUnitResolver.convert(CompilationUnitResolver.java:323)
+	at org.eclipse.jdt.core.dom.ASTParser.internalCreateAST(ASTParser.java:1231)
+	at org.eclipse.jdt.core.dom.ASTParser.createAST(ASTParser.java:820)
+	at org.eclipse.jdt.core.manipulation.CoreASTProvider$1.run(CoreASTProvider.java:272)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:45)
+	at org.eclipse.jdt.core.manipulation.CoreASTProvider.createAST(CoreASTProvider.java:264)
+	at org.eclipse.jdt.core.manipulation.CoreASTProvider.getAST(CoreASTProvider.java:197)
+	at org.eclipse.jdt.core.manipulation.CoreASTProvider.getAST(CoreASTProvider.java:187)
+	at org.eclipse.jdt.core.manipulation.SharedASTProviderCore.getAST(SharedASTProviderCore.java:138)
+	at org.eclipse.jdt.internal.ui.viewsupport.SelectionListenerWithASTManager$PartListenerGroup.calculateASTandInform(SelectionListenerWithASTManager.java:166)
+	at org.eclipse.jdt.internal.ui.viewsupport.SelectionListenerWithASTManager$PartListenerGroup$1.run(SelectionListenerWithASTManager.java:151)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+
+!ENTRY org.eclipse.jdt.core.manipulation 4 0 2023-02-23 11:16:17.575
+!MESSAGE Error in JDT Core during AST creation
+!STACK 0
+java.lang.IllegalArgumentException
+	at org.eclipse.jdt.core.dom.InfixExpression.setOperator(InfixExpression.java:383)
+	at org.eclipse.jdt.core.dom.ASTConverter.convert(ASTConverter.java:1287)
+	at org.eclipse.jdt.core.dom.ASTConverter.convert(ASTConverter.java:2031)
+	at org.eclipse.jdt.core.dom.ASTConverter.convertToParenthesizedExpression(ASTConverter.java:3795)
+	at org.eclipse.jdt.core.dom.ASTConverter.convert(ASTConverter.java:1943)
+	at org.eclipse.jdt.core.dom.ASTConverter.convert(ASTConverter.java:1204)
+	at org.eclipse.jdt.core.dom.ASTConverter.convert(ASTConverter.java:1974)
+	at org.eclipse.jdt.core.dom.ASTConverter.convert(ASTConverter.java:3052)
+	at org.eclipse.jdt.core.dom.ASTConverter.convert(ASTConverter.java:1383)
+	at org.eclipse.jdt.core.dom.ASTConverter.convert(ASTConverter.java:2970)
+	at org.eclipse.jdt.core.dom.ASTConverter.convert(ASTConverter.java:2214)
+	at org.eclipse.jdt.core.dom.ASTConverter.convert(ASTConverter.java:2994)
+	at org.eclipse.jdt.core.dom.ASTConverter.convert(ASTConverter.java:1383)
+	at org.eclipse.jdt.core.dom.ASTConverter.convert(ASTConverter.java:3235)
+	at org.eclipse.jdt.core.dom.ASTConverter.convert(ASTConverter.java:3012)
+	at org.eclipse.jdt.core.dom.ASTConverter.convert(ASTConverter.java:751)
+	at org.eclipse.jdt.core.dom.ASTConverter.buildBodyDeclarations(ASTConverter.java:208)
+	at org.eclipse.jdt.core.dom.ASTConverter.convert(ASTConverter.java:3347)
+	at org.eclipse.jdt.core.dom.ASTConverter.convert(ASTConverter.java:1524)
+	at org.eclipse.jdt.core.dom.CompilationUnitResolver.convert(CompilationUnitResolver.java:323)
+	at org.eclipse.jdt.core.dom.ASTParser.internalCreateAST(ASTParser.java:1231)
+	at org.eclipse.jdt.core.dom.ASTParser.createAST(ASTParser.java:820)
+	at org.eclipse.jdt.core.manipulation.CoreASTProvider$1.run(CoreASTProvider.java:272)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:45)
+	at org.eclipse.jdt.core.manipulation.CoreASTProvider.createAST(CoreASTProvider.java:264)
+	at org.eclipse.jdt.core.manipulation.CoreASTProvider.getAST(CoreASTProvider.java:197)
+	at org.eclipse.jdt.core.manipulation.CoreASTProvider.getAST(CoreASTProvider.java:187)
+	at org.eclipse.jdt.core.manipulation.SharedASTProviderCore.getAST(SharedASTProviderCore.java:138)
+	at org.eclipse.jdt.internal.ui.viewsupport.SelectionListenerWithASTManager$PartListenerGroup.calculateASTandInform(SelectionListenerWithASTManager.java:166)
+	at org.eclipse.jdt.internal.ui.viewsupport.SelectionListenerWithASTManager$PartListenerGroup$1.run(SelectionListenerWithASTManager.java:151)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)

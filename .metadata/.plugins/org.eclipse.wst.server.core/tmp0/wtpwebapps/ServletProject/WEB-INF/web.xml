@@ -139,7 +139,7 @@ id="WebApp_ID" version="3.1">
     </init-param>
  </servlet>
  <servlet-mapping>
-    <servlet-name>Controller</servlet-name>
+ <servlet-name>Controller</servlet-name>
  <url-pattern>*.bdo</url-pattern> 
  </servlet-mapping>
  
